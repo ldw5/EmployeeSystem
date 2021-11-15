@@ -60,7 +60,7 @@ function startUp () {
 
             case 'Quit':
                 Quit();
-                break;
+                
         }
     })
 }
@@ -69,5 +69,19 @@ function viewDepart() {
         let depart = information;
         console.log('\n');
         console.table(depart)
-    })
+    }).then(() => startUp());
+}
+function viewEmploy() {
+    db.viewEmploy().then(([information]) => {
+        let employ = information;
+        console.log('\n');
+        console.table(employ)
+    }).then(() => startUp());
+}
+function viewRole() {
+    db.viewRole().then(([information]) => {
+        let role = information;
+        console.log('\n');
+        console.table(role)
+    }).then(() => startUp());
 }
