@@ -3,6 +3,7 @@ require("console.table");
 const inquirer = require("inquirer")
 const db = require("./db");
 
+
 const connect = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -12,6 +13,9 @@ const connect = mysql.createConnection({
 );
 module.exports = connect;
 
+init();
+function init(){startUp();}
+
 function startUp () {
     inquirer.prompt([
         {
@@ -19,12 +23,12 @@ function startUp () {
             name: 'choose',
             message: 'Select an option.',
             choices: [
-                'View Employees',
-                'View Roles',
-                'View Departments',
-                'Add New Employee',
-                'Add Role',
-                'Add Department',
+                'View Department',
+                'View Employee',
+                'View Role',
+                'Add new Department',
+                'Add new Employee',
+                'Add new Role',
                 'Quit'
             ],
         }
@@ -58,5 +62,12 @@ function startUp () {
                 Quit();
                 break;
         }
+    })
+}
+function viewDepart() {
+    db.viewDepart().then(([information]) => {
+        let depart = information;
+        console.log('\n');
+        console.table(depart)
     })
 }
