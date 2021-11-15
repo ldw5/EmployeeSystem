@@ -1,7 +1,7 @@
 # EmployeeSystem
 https://github.com/ldw5/EmployeeSystem
 # Video walkthrough
-
+https://watch.screencastify.com/v/bn0FZjrPZuEcQAQ3EjJz
 # Description
 App allows developers to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 # Table of Contents
