@@ -11,7 +11,7 @@ const connect = mysql.createConnection({
     database:'team_db'
 }, console.log(`I'm connected to team_db`)
 );
-module.exports = connect;
+
 
 init();
 function init(){startUp();}
@@ -85,3 +85,6 @@ function viewRole() {
         console.table(role)
     }).then(() => startUp());
 }
+
+
+module.exports = connect;
